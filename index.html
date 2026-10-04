@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reframe | EMDR Therapy & Wellbeing Ireland (reframe.ie)</title>
+    <meta name="description" content="Reframe (reframe.ie) provides compassionate, evidence-based EMDR therapy with therapist Adrienne. Transform trauma, anxiety, and stress online or in Ireland.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f4f7f4',
+                            100: '#e3ebe3',
+                            200: '#c8d8c8',
+                            300: '#a2bd3',
+                            400: '#779c78',
+                            500: '#537d55',
+                            600: '#3e6140',
+                            700: '#334e35',
+                            800: '#2a3f2c',
+                            900: '#233425',
+                            950: '#111d13',
+                        },
+                        sand: {
+                            50: '#fdfbf7',
+                            100: '#f7f3ea',
+                            200: '#eee5d3',
+                            300: '#e2d2b5',
+                            400: '#d2b990',
+                            500: '#c3a170',
+                        },
+                        slatecustom: {
+                            800: '#1e293b',
+                            900: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome for serene iconography -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fdfbf7;
+            color: #2a3f2c;
+        }
+
+        .font-serif-heading {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+        }
+
+        /* Glassmorphism Navigation */
+        .glass-nav {
+            background: rgba(253, 251, 247, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(83, 125, 85, 0.12);
+        }
+
+        /* Subtle ambient glow */
+        .ambient-glow {
+            background: radial-gradient(circle at 50% 30%, rgba(200, 216, 200, 0.35) 0%, rgba(253, 251, 247, 0) 70%);
+        }
+
+        /* Focus mode glow for visualizer */
+        .visualizer-container {
+            background: linear-gradient(135deg, #111d13 0%, #1e293b 100%);
+        }
+
+        /* Smooth accordion height transition */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease-in-out, opacity 0.3s ease-in-out;
+            opacity: 0;
+        }
+        .faq-answer.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fdfbf7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c8d8c8;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #537d55;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-200 selection:text-brand-900">
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo & Branding -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-brand-600 flex items-center justify-center text-sand-100 font-serif-heading font-bold text-xl shadow-sm transition-transform group-hover:scale-105">
+                        R
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="font-serif-heading text-2xl font-bold tracking-tight text-brand-900">Reframe</span>
+                            <span class="text-[10px] font-medium bg-brand-100 text-brand-800 px-2 py-0.5 rounded-full uppercase tracking-wider">reframe.ie</span>
+                        </div>
+                        <p class="text-xs text-brand-700/80 font-medium tracking-wide">EMDR Therapy & Wellbeing</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-brand-900">
+                    <a href="#about-emdr" class="hover:text-brand-600 transition-colors">What is EMDR?</a>
+                    <a href="#visualizer" class="hover:text-brand-600 transition-colors flex items-center gap-1.5">
+                        <span>Calming Tool</span>
+                        <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                    </a>
+                    <a href="#services" class="hover:text-brand-600 transition-colors">Services</a>
+                    <a href="#about-adrienne" class="hover:text-brand-600 transition-colors">About Adrienne</a>
+                    <a href="#faq" class="hover:text-brand-600 transition-colors">FAQ</a>
+                </nav>
+
+                <!-- Navigation CTAs -->
+                <div class="hidden md:flex items-center gap-4">
+                    <button onclick="copyEmailToClipboard()" class="text-xs text-brand-700 hover:text-brand-900 font-medium px-3 py-2 rounded-lg border border-brand-200 hover:border-brand-400 transition-all flex items-center gap-2">
+                        <i class="fa-regular fa-copy"></i>
+                        <span>eftadrienne@gmail.com</span>
+                    </button>
+                    <a href="#contact" class="bg-brand-700 hover:bg-brand-800 text-sand-50 font-medium text-sm px-5 py-2.5 rounded-full shadow-sm hover:shadow transition-all duration-200 transform hover:-translate-y-0.5 flex items-center gap-2">
+                        <span>Book a Session</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-brand-900 hover:bg-brand-100 transition-colors focus:outline-none" aria-label="Toggle navigation menu">
+                    <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-brand-200/50 bg-sand-50 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about-emdr" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-brand-900 hover:bg-brand-100">What is EMDR?</a>
+            <a href="#visualizer" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-brand-900 hover:bg-brand-100">Interactive Calming Tool</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-brand-900 hover:bg-brand-100">Services & Areas</a>
+            <a href="#about-adrienne" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-brand-900 hover:bg-brand-100">About Adrienne</a>
+            <a href="#faq" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-brand-900 hover:bg-brand-100">FAQ</a>
+            <div class="pt-4 border-t border-brand-200/60 flex flex-col gap-3">
+                <button onclick="copyEmailToClipboard()" class="w-full text-center text-xs text-brand-800 font-medium py-2.5 rounded-lg border border-brand-200 bg-white">
+                    <i class="fa-regular fa-copy mr-1"></i> Copy eftadrienne@gmail.com
+                </button>
+                <a href="#contact" onclick="toggleMobileMenu()" class="w-full text-center bg-brand-700 text-sand-50 font-medium py-3 rounded-full shadow-sm">
+                    Book a Session
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden ambient-glow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Hero Column -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100/80 border border-brand-200 text-brand-800 text-xs font-semibold tracking-wide uppercase">
+                        <span class="w-2 h-2 rounded-full bg-brand-500"></span>
+                        <span>Official Practice Site • reframe.ie</span>
+                    </div>
+
+                    <h1 class="font-serif-heading text-4xl sm:text-5xl lg:text-6xl font-normal text-brand-950 leading-[1.15] tracking-tight">
+                        Transform Trauma & Anxiety into <span class="italic font-normal text-brand-700 underline decoration-sand-300 underline-offset-8">Lasting Peace</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-brand-800/85 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Welcome to <strong class="font-semibold text-brand-900">Reframe</strong>. Guided by certified therapist <strong class="font-semibold text-brand-900">Adrienne</strong>, we offer compassionate, evidence-based Eye Movement Desensitization and Reprocessing (EMDR) therapy online across Ireland and internationally.
+                    </p>
+
+                    <!-- Trust Highlights Badge -->
+                    <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-4 text-xs font-medium text-brand-800">
+                        <div class="flex items-center gap-1.5 bg-white/80 px-3 py-1.5 rounded-lg border border-brand-200 shadow-sm">
+                            <i class="fa-solid fa-shield-halved text-brand-600"></i>
+                            <span>Accredited EMDR Practice</span>
+                        </div>
+                        <div class="flex items-center gap-1.5 bg-white/80 px-3 py-1.5 rounded-lg border border-brand-200 shadow-sm">
+                            <i class="fa-solid fa-laptop-house text-brand-600"></i>
+                            <span>Online Sessions in Ireland</span>
+                        </div>
+                        <div class="flex items-center gap-1.5 bg-white/80 px-3 py-1.5 rounded-lg border border-brand-200 shadow-sm">
+                            <i class="fa-solid fa-heart text-brand-600"></i>
+                            <span>Safe & Confidential</span>
+                        </div>
+                    </div>
+
+                    <!-- Call to Action Buttons -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-brand-700 hover:bg-brand-800 text-sand-50 rounded-full font-medium text-base shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-3">
+                            <span>Book a Consultation</span>
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </a>
+                        <a href="#about-emdr" class="w-full sm:w-auto px-8 py-4 bg-white/90 hover:bg-white text-brand-900 border border-brand-200 hover:border-brand-300 rounded-full font-medium text-base shadow-sm transition-all text-center flex items-center justify-center gap-2">
+                            <span>How EMDR Works</span>
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Hero Column (Visual Card) -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative backdrop card -->
+                        <div class="absolute -inset-2 rounded-3xl bg-gradient-to-r from-brand-200 to-sand-300 opacity-60 blur-xl"></div>
+                        
+                        <div class="relative bg-white rounded-2xl p-6 sm:p-8 border border-brand-100 shadow-xl space-y-6">
+                            <div class="flex items-center justify-between pb-4 border-b border-brand-100">
+                                <div>
+                                    <h3 class="font-serif-heading text-xl font-semibold text-brand-900">Therapist Adrienne</h3>
+                                    <p class="text-xs text-brand-600">EMDR & Trauma Specialist</p>
+                                </div>
+                                <div class="w-12 h-12 rounded-full bg-brand-100 flex items-center justify-center text-brand-700 text-xl font-bold">
+                                    <i class="fa-solid fa-user-doctor"></i>
+                                </div>
+                            </div>
+
+                            <p class="text-sm text-brand-800 italic leading-relaxed">
+                                "In EMDR, we don't just talk about painful memories—we help your brain naturally reprocess them so you can move forward with calm, clarity, and resilience."
+                            </p>
+
+                            <div class="bg-brand-50 p-4 rounded-xl border border-brand-100 space-y-2">
+                                <div class="flex items-center justify-between text-xs font-semibold text-brand-900">
+                                    <span>Direct Booking Email:</span>
+                                    <span class="text-brand-600">Active Now</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm font-mono bg-white px-3 py-2 rounded-lg border border-brand-200 text-brand-900">
+                                    <span class="truncate">eftadrienne@gmail.com</span>
+                                    <button onclick="copyEmailToClipboard()" class="text-brand-600 hover:text-brand-800 text-xs font-sans font-medium underline ml-2 shrink-0">
+                                        Copy
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="pt-2">
+                                <a href="mailto:eftadrienne@gmail.com?subject=EMDR%20Therapy%20Inquiry%20via%20reframe.ie" class="block w-full py-3 text-center bg-sand-200 hover:bg-sand-300 text-brand-900 font-semibold rounded-xl text-sm transition-colors">
+                                    <i class="fa-regular fa-envelope mr-2"></i> Send Direct Email
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Bilateral Stimulation Visualizer -->
+    <section id="visualizer" class="py-16 md:py-24 bg-slatecustom-900 text-sand-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+                <span class="inline-block text-xs font-semibold uppercase tracking-widest text-brand-300">Interactive Calming Experience</span>
+                <h2 class="font-serif-heading text-3xl sm:text-4xl font-light text-sand-50">
+                    Bilateral Stimulation Visualizer
+                </h2>
+                <p class="text-sand-200 text-sm sm:text-base font-light max-w-2xl mx-auto">
+                    EMDR uses rhythmic left-right stimulation to help soothe the nervous system and reprocess locked stress. Experience a preview of this rhythmic focus technique below.
+                </p>
+            </div>
+
+            <!-- Visualizer Container -->
+            <div class="max-w-4xl mx-auto bg-slatecustom-800/90 rounded-2xl p-6 sm:p-10 border border-slate-700 shadow-2xl space-y-8">
+                
+                <!-- Animation Canvas Screen -->
+                <div class="relative w-full h-48 sm:h-64 bg-slate-950 rounded-xl border border-slate-800 flex items-center justify-center overflow-hidden">
+                    <!-- Tracking line -->
+                    <div class="absolute w-full h-0.5 bg-slate-800"></div>
+
+                    <!-- Center anchor dot -->
+                    <div class="absolute w-2 h-2 rounded-full bg-slate-700"></div>
+
+                    <!-- Bilateral Moving Dot -->
+                    <div id="emdr-dot" class="absolute top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-brand-400 shadow-[0_0_20px_rgba(119,156,120,0.8)] transition-transform duration-75"></div>
+
+                    <!-- Visual instructions overlay -->
+                    <div id="visualizer-start-prompt" class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs flex flex-col items-center justify-center text-center p-4 transition-opacity duration-300">
+                        <i class="fa-solid fa-eye text-brand-300 text-3xl mb-3 animate-pulse"></i>
+                        <p class="text-base font-medium text-sand-100">Keep your eyes relaxed and follow the glowing orb horizontally</p>
+                        <p class="text-xs text-slate-400 mt-1">Press Start below to begin rhythmic motion</p>
+                    </div>
+                </div>
+
+                <!-- Controls Bar -->
+                <div class="grid sm:grid-cols-3 gap-6 items-center pt-2">
+                    <!-- Play/Pause Toggle -->
+                    <div class="flex items-center justify-center sm:justify-start gap-3">
+                        <button id="visualizer-toggle-btn" onclick="toggleVisualizer()" class="px-6 py-3 bg-brand-500 hover:bg-brand-600 text-white font-medium rounded-full shadow transition-all flex items-center gap-2">
+                            <i id="toggle-icon" class="fa-solid fa-play text-sm"></i>
+                            <span id="toggle-text">Start Visualizer</span>
+                        </button>
+                    </div>
+
+                    <!-- Speed Control Slider -->
+                    <div class="space-y-1">
+                        <div class="flex justify-between text-xs text-sand-200 font-medium">
+                            <span>Movement Speed</span>
+                            <span id="speed-label" class="text-brand-300">Medium</span>
+                        </div>
+                        <input id="speed-slider" type="range" min="1" max="5" value="3" oninput="updateVisualizerSpeed(this.value)" class="w-full accent-brand-400 bg-slate-700 h-2 rounded-lg cursor-pointer">
+                    </div>
+
+                    <!-- Audio & Theme Options -->
+                    <div class="flex items-center justify-center sm:justify-end gap-3 text-xs">
+                        <button id="sound-btn" onclick="toggleAudio()" class="px-4 py-2.5 bg-slate-700 hover:bg-slate-600 rounded-lg text-sand-200 flex items-center gap-2 border border-slate-600 transition-colors">
+                            <i id="sound-icon" class="fa-solid fa-volume-xmark"></i>
+                            <span id="sound-text">Sound Off</span>
+                        </button>
+                        <button onclick="resetVisualizer()" class="px-3 py-2.5 bg-slate-700 hover:bg-slate-600 rounded-lg text-sand-200 border border-slate-600 transition-colors" title="Reset">
+                            <i class="fa-solid fa-rotate-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="text-xs text-center text-slate-400 border-t border-slate-800/80 pt-4">
+                    <p><i class="fa-solid fa-circle-info text-brand-400 mr-1"></i> Note: This self-soothing visualizer is for relaxation preview purposes and is not a replacement for guided EMDR sessions with Adrienne.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- What is EMDR Section -->
+    <section id="about-emdr" class="py-20 md:py-28 bg-sand-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="inline-block text-xs font-semibold uppercase tracking-widest text-brand-700 bg-brand-100 px-3 py-1 rounded-full">Evidence-Based Psychotherapy</span>
+                    
+                    <h2 class="font-serif-heading text-3xl sm:text-4xl lg:text-5xl font-normal text-brand-950 leading-tight">
+                        What is EMDR Therapy and How Does It Heal?
+                    </h2>
+
+                    <p class="text-brand-900/85 text-base sm:text-lg leading-relaxed">
+                        <strong class="font-semibold text-brand-900">EMDR</strong> (Eye Movement Desensitization and Reprocessing) is a scientifically validated, world-recognized therapy. Unlike traditional talk therapy, EMDR focuses directly on how your brain stores traumatic or stressful memories.
+                    </p>
+
+                    <p class="text-brand-800/80 text-sm sm:text-base leading-relaxed">
+                        When overwhelmed by trauma, panic, or chronic stress, the brain’s natural information processing system can get blocked. EMDR uses bilateral stimulation (such as eye movements or rhythmic tones) to help your brain process those memories, neutralizing emotional distress so you feel safe again in the present.
+                    </p>
+
+                    <!-- Feature Checklist -->
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <span class="text-sm font-medium text-brand-900">No need to describe events in detail</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <span class="text-sm font-medium text-brand-900">Faster results than traditional talk therapy</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <span class="text-sm font-medium text-brand-900">Recognized by WHO & NHS</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <span class="text-sm font-medium text-brand-900">Highly effective in online formats</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8 Phases Breakdown Box -->
+                <div class="lg:col-span-6">
+                    <div class="bg-white p-6 sm:p-8 rounded-2xl border border-brand-100 shadow-md space-y-6">
+                        <h3 class="font-serif-heading text-2xl font-semibold text-brand-900 flex items-center gap-2">
+                            <i class="fa-solid fa-diagram-project text-brand-600 text-xl"></i>
+                            <span>The EMDR Therapeutic Journey</span>
+                        </h3>
+
+                        <div class="space-y-4">
+                            <!-- Step 1 -->
+                            <div class="flex gap-4 p-3 rounded-xl bg-sand-50 border border-brand-100">
+                                <div class="w-8 h-8 rounded-lg bg-brand-700 text-sand-50 font-bold flex items-center justify-center shrink-0 text-sm">1</div>
+                                <div>
+                                    <h4 class="font-semibold text-sm text-brand-950">History & Safety Preparation</h4>
+                                    <p class="text-xs text-brand-800/80">Establishing comfort, safety tools, and understanding your unique history.</p>
+                                </div>
+                            </div>
+                            <!-- Step 2 -->
+                            <div class="flex gap-4 p-3 rounded-xl bg-sand-50 border border-brand-100">
+                                <div class="w-8 h-8 rounded-lg bg-brand-700 text-sand-50 font-bold flex items-center justify-center shrink-0 text-sm">2</div>
+                                <div>
+                                    <h4 class="font-semibold text-sm text-brand-950">Target Identification & Desensitization</h4>
+                                    <p class="text-xs text-brand-800/80">Using bilateral eye movements to process specific stressful triggers.</p>
+                                </div>
+                            </div>
+                            <!-- Step 3 -->
+                            <div class="flex gap-4 p-3 rounded-xl bg-sand-50 border border-brand-100">
+                                <div class="w-8 h-8 rounded-lg bg-brand-700 text-sand-50 font-bold flex items-center justify-center shrink-0 text-sm">3</div>
+                                <div>
+                                    <h4 class="font-semibold text-sm text-brand-950">Cognitive Reframing & Integration</h4>
+                                    <p class="text-xs text-brand-800/80">Replacing negative self-beliefs with empowering, peaceful truths.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center pt-2">
+                            <a href="#contact" class="inline-flex items-center gap-2 text-xs font-semibold text-brand-700 hover:text-brand-900 underline">
+                                <span>Discuss how EMDR can help you with Adrienne</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Services & Areas of Help Section -->
+    <section id="services" class="py-20 bg-brand-50/60 border-y border-brand-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+                <span class="inline-block text-xs font-semibold uppercase tracking-widest text-brand-700">How Reframe Can Help</span>
+                <h2 class="font-serif-heading text-3xl sm:text-4xl font-normal text-brand-950">
+                    Specialized EMDR Therapy Services
+                </h2>
+                <p class="text-brand-800 text-sm sm:text-base">
+                    Every individual's path to healing is unique. At Reframe (reframe.ie), Adrienne provides tailored EMDR programs for a wide range of emotional challenges.
+                </p>
+            </div>
+
+            <!-- Grid Cards -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="bg-white p-7 rounded-2xl border border-brand-100 shadow-sm hover:shadow-md transition-shadow space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="font-serif-heading text-2xl font-semibold text-brand-900">Trauma & PTSD</h3>
+                    <p class="text-sm text-brand-800/80 leading-relaxed">
+                        Process single-incident trauma (accidents, medical events) or complex relational trauma safely, reducing flashbacks, nightmares, and hypervigilance.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-7 rounded-2xl border border-brand-100 shadow-sm hover:shadow-md transition-shadow space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-bolt font-bold"></i>
+                    </div>
+                    <h3 class="font-serif-heading text-2xl font-semibold text-brand-900">Anxiety & Panic</h3>
+                    <p class="text-sm text-brand-800/80 leading-relaxed">
+                        Uncover the root causes of generalized anxiety, panic attacks, social anxiety, and phobias, restoring your nervous system to a natural state of calm.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-7 rounded-2xl border border-brand-100 shadow-sm hover:shadow-md transition-shadow space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-heart-crack"></i>
+                    </div>
+                    <h3 class="font-serif-heading text-2xl font-semibold text-brand-900">Grief & Loss</h3>
+                    <p class="text-sm text-brand-800/80 leading-relaxed">
+                        Gentle reprocessing for complicated grief, helping you process painful loss while preserving meaningful, loving memories without overwhelming pain.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white p-7 rounded-2xl border border-brand-100 shadow-sm hover:shadow-md transition-shadow space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-sparkles"></i>
+                    </div>
+                    <h3 class="font-serif-heading text-2xl font-semibold text-brand-900">Self-Esteem & Beliefs</h3>
+                    <p class="text-sm text-brand-800/80 leading-relaxed">
+                        Reframing core negative beliefs such as "I am not good enough" or "I am unsafe" into grounded, empowering self-acceptance and confidence.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white p-7 rounded-2xl border border-brand-100 shadow-sm hover:shadow-md transition-shadow space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-shield-cat"></i>
+                    </div>
+                    <h3 class="font-serif-heading text-2xl font-semibold text-brand-900">Burnout & Stress</h3>
+                    <p class="text-sm text-brand-800/80 leading-relaxed">
+                        Break free from chronic stress patterns, perfectionism, and workplace burnout by regulation techniques and targeted bilateral processing.
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white p-7 rounded-2xl border border-brand-100 shadow-sm hover:shadow-md transition-shadow space-y-4 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-sand-200 text-brand-800 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h3 class="font-serif-heading text-2xl font-semibold text-brand-900">Online Sessions</h3>
+                        <p class="text-sm text-brand-800/80 leading-relaxed">
+                            Access high-quality EMDR therapy from the comfort and privacy of your home across Ireland and internationally.
+                        </p>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center gap-2 text-xs font-semibold text-brand-700 hover:text-brand-900 pt-2">
+                        <span>Book Online Session</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Adrienne Section -->
+    <section id="about-adrienne" class="py-20 md:py-28 bg-sand-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Avatar / Visual Representation -->
+                <div class="lg:col-span-5 order-2 lg:order-1">
+                    <div class="relative max-w-md mx-auto">
+                        <div class="w-full aspect-4/5 rounded-2xl bg-gradient-to-tr from-brand-200 via-sand-200 to-brand-100 p-2 shadow-xl border border-brand-100">
+                            <div class="w-full h-full rounded-xl bg-white flex flex-col items-center justify-center p-8 text-center space-y-4">
+                                <div class="w-28 h-28 rounded-full bg-brand-600 text-sand-50 flex items-center justify-center font-serif-heading text-4xl font-bold shadow-md">
+                                    A
+                                </div>
+                                <div>
+                                    <h3 class="font-serif-heading text-2xl font-bold text-brand-950">Adrienne</h3>
+                                    <p class="text-xs text-brand-700 font-medium">Therapist & Founder of Reframe</p>
+                                </div>
+                                <div class="w-12 h-0.5 bg-brand-200 my-2"></div>
+                                <p class="text-xs text-brand-800/80 italic">
+                                    "My mission is to offer a safe, warm, and structured space where you feel truly heard as we heal old wounds together."
+                                </p>
+                                <div class="pt-2 flex items-center gap-2 text-xs text-brand-800 font-medium">
+                                    <i class="fa-solid fa-location-dot text-brand-600"></i>
+                                    <span>Ireland & Online Worldwide</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Bio Column -->
+                <div class="lg:col-span-7 space-y-6 order-1 lg:order-2">
+                    <span class="inline-block text-xs font-semibold uppercase tracking-widest text-brand-700 bg-brand-100 px-3 py-1 rounded-full">Meet Your Therapist</span>
+                    
+                    <h2 class="font-serif-heading text-3xl sm:text-4xl lg:text-5xl font-normal text-brand-950">
+                        Hello, I'm Adrienne
+                    </h2>
+
+                    <p class="text-brand-900/90 text-base sm:text-lg leading-relaxed">
+                        I am a dedicated therapist specializing in EMDR therapy. Through <strong class="font-semibold text-brand-950">Reframe</strong> (reframe.ie), I help clients overcome trauma, anxiety, emotional blockages, and distressing life events.
+                    </p>
+
+                    <p class="text-brand-800/80 text-sm sm:text-base leading-relaxed">
+                        My practice is rooted in empathy, evidence-based methods, and a deep respect for your individual rhythm. Trauma can often leave us feeling stuck in the past or disconnected from ourselves. With EMDR, we work with your brain's natural capacity to heal, unlocking emotional freedom without overwhelming you.
+                    </p>
+
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-600 mt-1"></i>
+                            <p class="text-sm text-brand-900"><strong class="font-semibold">Client-Centered Care:</strong> Therapy tailored specifically to your goals and pace.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-600 mt-1"></i>
+                            <p class="text-sm text-brand-900"><strong class="font-semibold">Safe Online Environment:</strong> Secure video sessions using encrypted healthcare-grade platforms.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-600 mt-1"></i>
+                            <p class="text-sm text-brand-900"><strong class="font-semibold">Direct Communication:</strong> Reach me directly at <a href="mailto:eftadrienne@gmail.com" class="text-brand-700 underline font-medium">eftadrienne@gmail.com</a> for bookings.</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 bg-brand-700 hover:bg-brand-800 text-sand-50 rounded-full font-medium text-sm transition-all shadow-sm">
+                            <span>Get in Touch with Adrienne</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-sand-100/50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            
+            <div class="text-center space-y-3">
+                <span class="inline-block text-xs font-semibold uppercase tracking-widest text-brand-700">Common Questions</span>
+                <h2 class="font-serif-heading text-3xl sm:text-4xl font-normal text-brand-950">
+                    Frequently Asked Questions
+                </h2>
+                <p class="text-brand-800 text-sm sm:text-base">
+                    Everything you need to know about starting EMDR therapy with Reframe.
+                </p>
+            </div>
+
+            <!-- Accordion List -->
+            <div class="space-y-4">
+                
+                <!-- FAQ 1 -->
+                <div class="bg-white rounded-xl border border-brand-200/80 shadow-xs overflow-hidden">
+                    <button onclick="toggleFaq(1)" class="w-full p-5 text-left font-serif-heading text-xl font-semibold text-brand-950 flex justify-between items-center gap-4 hover:bg-brand-50/50 transition-colors">
+                        <span>Is EMDR therapy effective online?</span>
+                        <i id="faq-icon-1" class="fa-solid fa-chevron-down text-brand-600 text-sm transition-transform"></i>
+                    </button>
+                    <div id="faq-answer-1" class="faq-answer px-5 pb-5 text-sm text-brand-800/85 leading-relaxed">
+                        Yes! Numerous clinical studies demonstrate that online EMDR is just as effective as in-person therapy. Using secure video calls and visual/auditory bilateral stimulation tools, you can experience full therapeutic benefits from the comfort and privacy of your own home.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-white rounded-xl border border-brand-200/80 shadow-xs overflow-hidden">
+                    <button onclick="toggleFaq(2)" class="w-full p-5 text-left font-serif-heading text-xl font-semibold text-brand-950 flex justify-between items-center gap-4 hover:bg-brand-50/50 transition-colors">
+                        <span>Do I have to talk about my trauma in detail?</span>
+                        <i id="faq-icon-2" class="fa-solid fa-chevron-down text-brand-600 text-sm transition-transform"></i>
+                    </button>
+                    <div id="faq-answer-2" class="faq-answer px-5 pb-5 text-sm text-brand-800/85 leading-relaxed">
+                        No. One of the greatest advantages of EMDR is that you do not need to describe trauma details out loud if you prefer not to. EMDR works primarily by targeting internal memory representations through bilateral stimulation, sparing you the distress of repeating painful details.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-white rounded-xl border border-brand-200/80 shadow-xs overflow-hidden">
+                    <button onclick="toggleFaq(3)" class="w-full p-5 text-left font-serif-heading text-xl font-semibold text-brand-950 flex justify-between items-center gap-4 hover:bg-brand-50/50 transition-colors">
+                        <span>How many sessions will I need?</span>
+                        <i id="faq-icon-3" class="fa-solid fa-chevron-down text-brand-600 text-sm transition-transform"></i>
+                    </button>
+                    <div id="faq-answer-3" class="faq-answer px-5 pb-5 text-sm text-brand-800/85 leading-relaxed">
+                        The number of sessions depends on your individual needs. Single-incident traumas (such as a specific accident) may often be reprocessed in 6 to 10 sessions. Complex trauma or long-standing anxiety may take longer. During your initial consultation, Adrienne will outline a personalized treatment plan.
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="bg-white rounded-xl border border-brand-200/80 shadow-xs overflow-hidden">
+                    <button onclick="toggleFaq(4)" class="w-full p-5 text-left font-serif-heading text-xl font-semibold text-brand-950 flex justify-between items-center gap-4 hover:bg-brand-50/50 transition-colors">
+                        <span>How do I book a session with Adrienne?</span>
+                        <i id="faq-icon-4" class="fa-solid fa-chevron-down text-brand-600 text-sm transition-transform"></i>
+                    </button>
+                    <div id="faq-answer-4" class="faq-answer px-5 pb-5 text-sm text-brand-800/85 leading-relaxed">
+                        You can email Adrienne directly at <strong class="text-brand-900">eftadrienne@gmail.com</strong> or use the interactive booking contact form on this page to submit an inquiry. Adrienne will respond promptly to arrange an initial consultation call.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact & Pre-booking Section -->
+    <section id="contact" class="py-20 md:py-28 bg-brand-900 text-sand-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <!-- Direct Info Panel -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="inline-block text-xs font-semibold uppercase tracking-widest text-brand-300">Start Your Journey</span>
+                        <h2 class="font-serif-heading text-3xl sm:text-4xl lg:text-5xl font-light text-sand-50 mt-2">
+                            Book a Session
+                        </h2>
+                        <p class="text-sand-200 text-sm sm:text-base mt-4 leading-relaxed font-light">
+                            Ready to take the first step towards healing with EMDR? Reach out directly to Adrienne. Whether you have questions or want to schedule your consultation, we're here for you.
+                        </p>
+                    </div>
+
+                    <!-- Direct Email Highlight Box -->
+                    <div class="bg-brand-800/90 p-6 rounded-2xl border border-brand-700 space-y-4">
+                        <div class="flex items-center gap-3 text-brand-300">
+                            <i class="fa-regular fa-envelope text-2xl"></i>
+                            <h3 class="font-serif-heading text-xl font-semibold text-sand-50">Direct Practice Email</h3>
+                        </div>
+                        <p class="text-xs text-sand-200">
+                            Send an email directly or click below to copy the address:
+                        </p>
+                        <div class="flex items-center justify-between bg-brand-950 p-3 rounded-xl border border-brand-700">
+                            <span class="font-mono text-sm text-sand-100 font-medium">eftadrienne@gmail.com</span>
+                            <button onclick="copyEmailToClipboard()" class="px-3 py-1.5 bg-brand-600 hover:bg-brand-500 text-xs font-semibold text-sand-50 rounded-lg transition-colors">
+                                Copy Email
+                            </button>
+                        </div>
+                        <a href="mailto:eftadrienne@gmail.com?subject=Inquiry%20from%20reframe.ie" class="block text-center py-2.5 bg-sand-200 hover:bg-sand-300 text-brand-950 font-semibold text-xs rounded-xl transition-colors">
+                            <i class="fa-solid fa-paper-plane mr-2"></i> Open Email Client Directly
+                        </a>
+                    </div>
+
+                    <!-- Practice Details -->
+                    <div class="space-y-3 text-sm text-sand-200">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-globe text-brand-400 w-5"></i>
+                            <span>Domain: <strong class="text-sand-100">reframe.ie</strong></span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-user-check text-brand-400 w-5"></i>
+                            <span>Practitioner: <strong class="text-sand-100">Adrienne</strong></span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-clock text-brand-400 w-5"></i>
+                            <span>Response Time: Within 24-48 business hours</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Pre-booking Inquiry Form -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white text-brand-950 p-6 sm:p-10 rounded-2xl border border-brand-100 shadow-2xl space-y-6">
+                        
+                        <div>
+                            <h3 class="font-serif-heading text-2xl font-bold text-brand-900">Send an Inquiry Form</h3>
+                            <p class="text-xs text-brand-800/80 mt-1">Fill in details below to generate a pre-formatted email directly to eftadrienne@gmail.com.</p>
+                        </div>
+
+                        <form id="booking-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-brand-900 mb-1" for="user-name">Your Full Name *</label>
+                                    <input type="text" id="user-name" required placeholder="e.g. Sarah O'Connor" class="w-full px-4 py-2.5 rounded-xl border border-brand-200 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-brand-900 mb-1" for="user-phone">Phone Number (Optional)</label>
+                                    <input type="tel" id="user-phone" placeholder="e.g. +353 87 123 4567" class="w-full px-4 py-2.5 rounded-xl border border-brand-200 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-brand-900 mb-1" for="session-type">Preferred Format</label>
+                                    <select id="session-type" class="w-full px-4 py-2.5 rounded-xl border border-brand-200 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none bg-white">
+                                        <option value="Online Session (Ireland / Worldwide)">Online Session (Ireland & Worldwide)</option>
+                                        <option value="In-Person Consultation (Ireland)">In-Person Consultation (Ireland)</option>
+                                        <option value="General Information Inquiry">General Information Inquiry</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-brand-900 mb-1" for="primary-focus">Primary Area of Focus</label>
+                                    <select id="primary-focus" class="w-full px-4 py-2.5 rounded-xl border border-brand-200 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none bg-white">
+                                        <option value="Trauma / PTSD">Trauma / PTSD</option>
+                                        <option value="Anxiety or Panic">Anxiety or Panic</option>
+                                        <option value="Grief & Loss">Grief & Loss</option>
+                                        <option value="Self-Esteem & Beliefs">Self-Esteem & Beliefs</option>
+                                        <option value="Burnout & Stress">Burnout & Stress</option>
+                                        <option value="Other Area">Other / Not Sure Yet</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-brand-900 mb-1" for="user-message">Your Message or Brief Overview</label>
+                                <textarea id="user-message" rows="4" placeholder="Share a brief overview of what you'd like help with or preferred consultation times..." class="w-full px-4 py-2.5 rounded-xl border border-brand-200 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 bg-brand-700 hover:bg-brand-800 text-sand-50 font-semibold rounded-xl text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Create Email to eftadrienne@gmail.com</span>
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-950 text-sand-200 py-12 border-t border-brand-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-brand-600 flex items-center justify-center text-sand-100 font-serif-heading font-bold text-lg">
+                        R
+                    </div>
+                    <div>
+                        <span class="font-serif-heading text-xl font-bold text-sand-100">Reframe</span>
+                        <span class="text-xs text-brand-300 ml-2">reframe.ie</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6 text-xs text-sand-300">
+                    <a href="#about-emdr" class="hover:text-sand-100 transition-colors">What is EMDR</a>
+                    <a href="#visualizer" class="hover:text-sand-100 transition-colors">Visualizer</a>
+                    <a href="#services" class="hover:text-sand-100 transition-colors">Services</a>
+                    <a href="#about-adrienne" class="hover:text-sand-100 transition-colors">About Adrienne</a>
+                    <a href="#faq" class="hover:text-sand-100 transition-colors">FAQ</a>
+                </div>
+
+                <div class="text-xs text-sand-400">
+                    Contact: <a href="mailto:eftadrienne@gmail.com" class="text-sand-200 hover:underline">eftadrienne@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="border-t border-brand-900 pt-6 text-center text-xs text-sand-400 space-y-2">
+                <p>&copy; 2026 Reframe (reframe.ie). All rights reserved. EMDR Therapy practice led by therapist Adrienne.</p>
+                <p class="max-w-3xl mx-auto text-[11px] text-brand-300/60 leading-relaxed">
+                    Disclaimer: If you are experiencing a severe mental health crisis or emergency, please contact your local emergency services (112 / 999 in Ireland) or Samaritans (116 123) immediately. This website is for informational and booking purposes.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-slatecustom-900 text-sand-50 px-5 py-3 rounded-xl shadow-2xl border border-slate-700 flex items-center gap-3 transition-all duration-300 transform translate-y-20 opacity-0 pointer-events-none">
+        <i id="toast-icon" class="fa-solid fa-check-circle text-brand-400 text-lg"></i>
+        <span id="toast-msg" class="text-sm font-medium">Email copied to clipboard!</span>
+    </div>
+
+    <script>
+        /* Mobile Menu Toggle */
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            if(menu.classList.contains('hidden')) {
+                icon.className = 'fa-solid fa-bars text-xl';
+            } else {
+                icon.className = 'fa-solid fa-xmark text-xl';
+            }
+        }
+
+        /* FAQ Accordion Toggle */
+        function toggleFaq(id) {
+            const answer = document.getElementById(`faq-answer-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            const isOpen = answer.classList.contains('open');
+
+            // Close all
+            document.querySelectorAll('.faq-answer').forEach(el => el.classList.remove('open'));
+            document.querySelectorAll('[id^="faq-icon-"]').forEach(el => el.style.transform = 'rotate(0deg)');
+
+            if(!isOpen) {
+                answer.classList.add('open');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        /* Copy Email Function with Toast UI */
+        function copyEmailToClipboard() {
+            const email = "eftadrienne@gmail.com";
+            
+            // Clipboard API or fallback
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(email);
+            } else {
+                const textArea = document.createElement("textarea");
+                textArea.value = email;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                } catch (err) {
+                    console.error('Fallback copy failed', err);
+                }
+                document.body.removeChild(textArea);
+            }
+
+            showToast("Copied eftadrienne@gmail.com to clipboard!");
+        }
+
+        /* Toast UI Helper */
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const msgEl = document.getElementById('toast-msg');
+            msgEl.textContent = message;
+            toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+            }, 3500);
+        }
+
+        /* Form Submission Handler -> Generates mailto link */
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('user-name').value;
+            const phone = document.getElementById('user-phone').value;
+            const format = document.getElementById('session-type').value;
+            const focus = document.getElementById('primary-focus').value;
+            const message = document.getElementById('user-message').value;
+
+            const subject = encodeURIComponent(`Reframe (reframe.ie) Booking Inquiry - ${name}`);
+            const body = encodeURIComponent(
+                `Hello Adrienne,\n\nI would like to inquire about booking an EMDR therapy session with Reframe.\n\n` +
+                `Name: ${name}\n` +
+                `Phone: ${phone || 'Not provided'}\n` +
+                `Format: ${format}\n` +
+                `Primary Area of Focus: ${focus}\n\n` +
+                `Message:\n${message}\n\n` +
+                `Sent via reframe.ie inquiry form.`
+            );
+
+            showToast("Opening your email client...");
+            window.location.href = `mailto:eftadrienne@gmail.com?subject=${subject}&body=${body}`;
+        }
+
+        /* ==========================================================================
+           EMDR Bilateral Stimulation Visualizer Engine
+           ========================================================================== */
+        let isRunning = false;
+        let animationFrameId = null;
+        let position = 50; // Percentage (0 to 100)
+        let direction = 1; // 1 = right, -1 = left
+        let speedMultiplier = 3; // Default speed
+        let audioEnabled = false;
+        let audioCtx = null;
+
+        const dot = document.getElementById('emdr-dot');
+        const startPrompt = document.getElementById('visualizer-start-prompt');
+        const toggleBtn = document.getElementById('visualizer-toggle-btn');
+        const toggleIcon = document.getElementById('toggle-icon');
+        const toggleText = document.getElementById('toggle-text');
+
+        function toggleVisualizer() {
+            isRunning = !isRunning;
+            if (isRunning) {
+                startPrompt.classList.add('opacity-0', 'pointer-events-none');
+                toggleIcon.className = 'fa-solid fa-pause text-sm';
+                toggleText.textContent = 'Pause';
+                animateVisualizer();
+            } else {
+                toggleIcon.className = 'fa-solid fa-play text-sm';
+                toggleText.textContent = 'Resume';
+                cancelAnimationFrame(animationFrameId);
+            }
+        }
+
+        function updateVisualizerSpeed(val) {
+            speedMultiplier = parseFloat(val);
+            const speedLabels = ['Very Slow', 'Slow', 'Medium', 'Fast', 'Very Fast'];
+            document.getElementById('speed-label').textContent = speedLabels[val - 1];
+        }
+
+        function resetVisualizer() {
+            isRunning = false;
+            cancelAnimationFrame(animationFrameId);
+            position = 50;
+            dot.style.left = '50%';
+            dot.style.transform = 'translate(-50%, -50%)';
+            startPrompt.classList.remove('opacity-0', 'pointer-events-none');
+            toggleIcon.className = 'fa-solid fa-play text-sm';
+            toggleText.textContent = 'Start Visualizer';
+        }
+
+        function animateVisualizer() {
+            if (!isRunning) return;
+
+            // Speed formula
+            const step = (0.25 * speedMultiplier);
+            position += step * direction;
+
+            if (position >= 92) {
+                position = 92;
+                direction = -1;
+                playBilateralBeep('right');
+            } else if (position <= 8) {
+                position = 8;
+                direction = 1;
+                playBilateralBeep('left');
+            }
+
+            dot.style.left = `${position}%`;
+            dot.style.transform = 'translate(-50%, -50%)';
+
+            animationFrameId = requestAnimationFrame(animateVisualizer);
+        }
+
+        /* Web Audio API for Soft Bilateral Stereo Tones */
+        function toggleAudio() {
+            audioEnabled = !audioEnabled;
+            const soundIcon = document.getElementById('sound-icon');
+            const soundText = document.getElementById('sound-text');
+            const soundBtn = document.getElementById('sound-btn');
+
+            if (audioEnabled) {
+                if (!audioCtx) {
+                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+                soundIcon.className = 'fa-solid fa-volume-high text-brand-400';
+                soundText.textContent = 'Sound On';
+                soundBtn.classList.add('border-brand-500', 'bg-slate-800');
+                showToast("Bilateral soft chime enabled");
+            } else {
+                soundIcon.className = 'fa-solid fa-volume-xmark';
+                soundText.textContent = 'Sound Off';
+                soundBtn.classList.remove('border-brand-500', 'bg-slate-800');
+            }
+        }
+
+        function playBilateralBeep(panSide) {
+            if (!audioEnabled || !audioCtx) return;
+
+            try {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(440, audioCtx.currentTime); // Soft A4 tone
+
+                // Gentle soft envelope
+                gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.08, audioCtx.currentTime + 0.03);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.15);
+
+                // Stereo Panner if supported
+                if (audioCtx.createStereoPanner) {
+                    const panner = audioCtx.createStereoPanner();
+                    panner.pan.value = (panSide === 'left') ? -0.8 : 0.8;
+                    osc.connect(gain);
+                    gain.connect(panner);
+                    panner.connect(audioCtx.destination);
+                } else {
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                }
+
+                osc.start(audioCtx.currentTime);
+                osc.stop(audioCtx.currentTime + 0.16);
+            } catch (err) {
+                console.error("Audio error", err);
+            }
+        }
+    </script>
+</body>
+</html>
